@@ -7,9 +7,7 @@ Matrik      : 18ddt23f1099
 */
 
 require_once "functions.php";
-
 requireTechnician();
-
 if (!isset($_GET['file'])) {
     header("Location: reports.php");
     exit();
