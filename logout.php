@@ -7,11 +7,8 @@ Matrik      : 18ddt23f1099
 */
 
 session_start();
-
 $_SESSION = [];
-
 session_destroy();
-
 header("Location: index.php");
 exit();
 ?>
