@@ -7,9 +7,7 @@ Matrik      : 18ddt23f1099
 */
 
 require_once "functions.php";
-
 requireLogin();
-
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: create_report.php");
     exit();
@@ -101,29 +99,18 @@ if ($file) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Report Saved</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <main class="container">
-
         <div class="success-card">
-
             <h2>Report Submitted Successfully</h2>
-
-            <p>
-                Your maintenance report has been recorded.
-            </p>
+            <p>Your maintenance report has been recorded.</p>
 
             <p>
                 <strong>Report ID:</strong>
@@ -131,27 +118,19 @@ if ($file) {
             </p>
 
             <div class="button-group">
-
                 <a
                     href="reports.php"
-                    class="button button-primary"
-                >
+                    class="button button-primary">
                     View Reports
                 </a>
 
                 <a
                     href="dashboard.php"
-                    class="button button-secondary"
-                >
+                    class="button button-secondary">
                     Dashboard
                 </a>
-
             </div>
-
         </div>
-
     </main>
-
 </body>
-
 </html>
