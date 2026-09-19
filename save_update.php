@@ -98,7 +98,6 @@ if ($file) {
 
     die("Unable to update report.");
 }
-
 header("Location: view_report.php?file=" . urlencode($fileName));
 exit();
 ?>
