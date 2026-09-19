@@ -6,7 +6,6 @@ Matrik      : 18ddt23f1099
 */
 
 function validateReportForm() {
-
     const studentName =
         document.getElementById("student_name").value.trim();
 
@@ -51,7 +50,6 @@ function validateReportForm() {
 }
 
 function confirmDelete() {
-
     return confirm(
         "Are you sure you want to delete this maintenance report?"
     );
