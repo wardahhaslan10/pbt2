@@ -13,38 +13,24 @@ requireLogin();
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Create Maintenance Report</title>
-
     <link rel="stylesheet" href="style.css">
-
     <script src="script.js" defer></script>
-
 </head>
 
 <body>
-
     <header class="main-header">
-
         <div class="container">
-
             <h1>Hostel Maintenance Reporting System</h1>
-
             <p>Create New Maintenance Report</p>
-
         </div>
-
     </header>
 
     <nav class="navigation">
-
         <div class="container nav-container">
-
             <a href="dashboard.php" class="nav-link">
                 Dashboard
             </a>
@@ -56,17 +42,12 @@ requireLogin();
             <a href="logout.php" class="nav-link nav-logout">
                 Logout
             </a>
-
         </div>
 
     </nav>
-
     <main class="container">
-
         <div class="form-card">
-
             <h2>Maintenance Report Form</h2>
-
             <p class="form-note">
                 Please complete all required information.
             </p>
@@ -74,8 +55,7 @@ requireLogin();
             <form
                 method="POST"
                 action="save_report.php"
-                onsubmit="return validateReportForm();"
-            >
+                onsubmit="return validateReportForm();">
 
                 <div class="form-group">
 
@@ -87,13 +67,10 @@ requireLogin();
                         type="text"
                         id="student_name"
                         name="student_name"
-                        required
-                    >
-
+                        required>
                 </div>
 
                 <div class="form-group">
-
                     <label for="matric_no">
                         2. Matric No
                     </label>
@@ -102,13 +79,10 @@ requireLogin();
                         type="text"
                         id="matric_no"
                         name="matric_no"
-                        required
-                    >
-
+                        required>
                 </div>
 
                 <div class="form-group">
-
                     <label for="hostel_block">
                         3. Hostel Block
                     </label>
@@ -116,8 +90,7 @@ requireLogin();
                     <select
                         id="hostel_block"
                         name="hostel_block"
-                        required
-                    >
+                        required>
 
                         <option value="">
                             -- Select Block --
@@ -138,13 +111,10 @@ requireLogin();
                         <option value="Block D">
                             Block D
                         </option>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="room_number">
                         4. Room Number
                     </label>
@@ -154,13 +124,10 @@ requireLogin();
                         id="room_number"
                         name="room_number"
                         placeholder="Example: A-203"
-                        required
-                    >
-
+                        required>
                 </div>
 
                 <div class="form-group">
-
                     <label for="damage_type">
                         5. Type of Damage
                     </label>
@@ -168,8 +135,7 @@ requireLogin();
                     <select
                         id="damage_type"
                         name="damage_type"
-                        required
-                    >
+                        required>
 
                         <option value="">
                             -- Select Damage Type --
@@ -198,62 +164,46 @@ requireLogin();
                         <option value="Furniture">
                             Furniture
                         </option>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label>
                         6. Urgency Level
                     </label>
 
                     <div class="radio-group">
-
                         <label class="radio-label">
 
                             <input
                                 type="radio"
                                 name="urgency"
                                 value="Low"
-                                required
-                            >
-
+                                required>
                             Low
 
                         </label>
 
                         <label class="radio-label">
-
                             <input
                                 type="radio"
                                 name="urgency"
-                                value="Medium"
-                            >
-
+                                value="Medium">
                             Medium
 
                         </label>
 
                         <label class="radio-label">
-
                             <input
                                 type="radio"
                                 name="urgency"
-                                value="High"
-                            >
-
+                                value="High">
                             High
-
                         </label>
-
                     </div>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="incident_date">
                         7. Date of Incident
                     </label>
@@ -262,13 +212,11 @@ requireLogin();
                         type="date"
                         id="incident_date"
                         name="incident_date"
-                        required
-                    >
+                        required>
 
                 </div>
 
                 <div class="form-group">
-
                     <label for="description">
                         8. Description
                     </label>
@@ -277,13 +225,10 @@ requireLogin();
                         id="description"
                         name="description"
                         rows="5"
-                        required
-                    ></textarea>
-
+                        required></textarea>
                 </div>
 
                 <div class="form-group">
-
                     <label for="contact">
                         9. Contact Number
                     </label>
@@ -293,35 +238,25 @@ requireLogin();
                         id="contact"
                         name="contact"
                         placeholder="Example: 0123456789"
-                        required
-                    >
+                        required>
 
                 </div>
-
                 <div class="button-group">
 
                     <button
                         type="submit"
-                        class="button button-primary"
-                    >
+                        class="button button-primary">
                         Submit Report
                     </button>
 
                     <a
                         href="dashboard.php"
-                        class="button button-secondary"
-                    >
+                        class="button button-secondary">
                         Cancel
                     </a>
-
                 </div>
-
             </form>
-
         </div>
-
     </main>
-
 </body>
-
 </html>
