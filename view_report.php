@@ -38,38 +38,24 @@ if (
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>View Report</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <header class="main-header">
-
         <div class="container">
-
             <h1>Maintenance Report Details</h1>
-
         </div>
-
     </header>
 
     <main class="container">
-
         <div class="detail-card">
-
             <h2>Full Report</h2>
-
             <div class="detail-table">
-
                 <div class="detail-row">
                     <div class="detail-label">Report ID</div>
                     <div class="detail-value">
@@ -150,31 +136,21 @@ if (
             </div>
 
             <div class="button-group">
-
                 <a
                     href="reports.php"
-                    class="button button-secondary"
-                >
+                    class="button button-secondary">
                     Back to Reports
                 </a>
 
                 <?php if ($category === "Technician"): ?>
-
                     <a
                         href="update_report.php?file=<?php echo urlencode($fileName); ?>"
-                        class="button button-primary"
-                    >
+                        class="button button-primary">
                         Update Report
                     </a>
-
                 <?php endif; ?>
-
             </div>
-
         </div>
-
     </main>
-
 </body>
-
 </html>
