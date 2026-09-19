@@ -8,7 +8,6 @@ Matrik      : 18ddt23f1099
 */
 
 session_start();
-
 $reportFolder = __DIR__ . "/data/reports/";
 $logFolder = __DIR__ . "/logs/";
 $logFile = $logFolder . "transaction_log.txt";
@@ -59,18 +58,15 @@ function generateReportId()
 function writeTransaction($action, $reportId)
 {
     global $logFile;
-
     $dateTime = date("Y-m-d H:i:s");
     $username = $_SESSION['username'] ?? 'Unknown';
     $category = $_SESSION['user_category'] ?? 'Unknown';
-
     $transaction = "[" . $dateTime . "] "
         . $action
         . " | User: " . $username
         . " | User Category: " . $category
         . " | Report: " . $reportId
         . PHP_EOL;
-
     $file = fopen($logFile, "a");
 
     if ($file) {
@@ -85,7 +81,6 @@ function writeTransaction($action, $reportId)
 function createReportContent($data)
 {
     $content = "";
-
     $content .= "Report ID: " . $data['report_id'] . PHP_EOL;
     $content .= "Student Username: " . $data['student_username'] . PHP_EOL;
     $content .= "Student Name: " . $data['student_name'] . PHP_EOL;
@@ -98,7 +93,6 @@ function createReportContent($data)
     $content .= "Description: " . $data['description'] . PHP_EOL;
     $content .= "Contact Number: " . $data['contact'] . PHP_EOL;
     $content .= "Status: " . $data['status'] . PHP_EOL;
-
     return $content;
 }
 
@@ -125,20 +119,15 @@ function readReport($filePath)
 function parseReport($content)
 {
     $lines = explode(PHP_EOL, trim($content));
-
     $data = [];
-
     foreach ($lines as $line) {
         $parts = explode(": ", $line, 2);
-
         if (count($parts) == 2) {
             $key = $parts[0];
             $value = $parts[1];
-
             $data[$key] = $value;
         }
     }
-
     return $data;
 }
 
@@ -162,9 +151,7 @@ function getReportFiles()
             }
         }
     }
-
     rsort($files);
-
     return $files;
 }
 ?>
