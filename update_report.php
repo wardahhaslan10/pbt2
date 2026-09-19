@@ -7,9 +7,7 @@ Matrik      : 18ddt23f1099
 */
 
 require_once "functions.php";
-
 requireTechnician();
-
 if (!isset($_GET['file'])) {
     header("Location: reports.php");
     exit();
@@ -28,73 +26,49 @@ $report = parseReport($content);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Update Report</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <header class="main-header">
-
         <div class="container">
-
             <h1>Update Maintenance Report</h1>
-
         </div>
-
     </header>
 
     <main class="container">
-
         <div class="form-card">
-
             <h2>Update Report Details</h2>
-
             <form
                 method="POST"
-                action="save_update.php"
-            >
+                action="save_update.php">
 
                 <input
                     type="hidden"
                     name="file"
-                    value="<?php echo htmlspecialchars($fileName); ?>"
-                >
+                    value="<?php echo htmlspecialchars($fileName); ?>">
 
                 <div class="form-group">
-
                     <label>Student Name</label>
-
                     <input
                         type="text"
                         value="<?php echo htmlspecialchars($report['Student Name'] ?? ""); ?>"
-                        disabled
-                    >
+                        disabled>
 
                 </div>
-
                 <div class="form-group">
-
                     <label>Matric No</label>
-
                     <input
                         type="text"
                         value="<?php echo htmlspecialchars($report['Matric No'] ?? ""); ?>"
-                        disabled
-                    >
+                        disabled>
 
                 </div>
-
                 <div class="form-group">
-
                     <label for="damage_type">
                         Type of Damage
                     </label>
@@ -102,8 +76,7 @@ $report = parseReport($content);
                     <select
                         name="damage_type"
                         id="damage_type"
-                        required
-                    >
+                        required>
 
                         <?php
                         $damageTypes = [
@@ -117,26 +90,20 @@ $report = parseReport($content);
 
                         foreach ($damageTypes as $type):
                         ?>
-
                             <option
                                 value="<?php echo htmlspecialchars($type); ?>"
                                 <?php
                                 if (($report['Type of Damage'] ?? "") === $type) {
                                     echo "selected";
                                 }
-                                ?>
-                            >
+                                ?>>
                                 <?php echo htmlspecialchars($type); ?>
                             </option>
-
                         <?php endforeach; ?>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="urgency">
                         Urgency Level
                     </label>
@@ -144,8 +111,7 @@ $report = parseReport($content);
                     <select
                         name="urgency"
                         id="urgency"
-                        required
-                    >
+                        required>
 
                         <?php
                         $urgencies = [
@@ -156,26 +122,20 @@ $report = parseReport($content);
 
                         foreach ($urgencies as $urgency):
                         ?>
-
                             <option
                                 value="<?php echo htmlspecialchars($urgency); ?>"
                                 <?php
                                 if (($report['Urgency Level'] ?? "") === $urgency) {
                                     echo "selected";
                                 }
-                                ?>
-                            >
+                                ?>>
                                 <?php echo htmlspecialchars($urgency); ?>
                             </option>
-
                         <?php endforeach; ?>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="status">
                         Status
                     </label>
@@ -183,8 +143,7 @@ $report = parseReport($content);
                     <select
                         name="status"
                         id="status"
-                        required
-                    >
+                        required>
 
                         <option
                             value="Pending"
@@ -192,8 +151,7 @@ $report = parseReport($content);
                             if (($report['Status'] ?? "") === "Pending") {
                                 echo "selected";
                             }
-                            ?>
-                        >
+                            ?>>
                             Pending
                         </option>
 
@@ -203,8 +161,7 @@ $report = parseReport($content);
                             if (($report['Status'] ?? "") === "In Progress") {
                                 echo "selected";
                             }
-                            ?>
-                        >
+                            ?>>
                             In Progress
                         </option>
 
@@ -214,17 +171,13 @@ $report = parseReport($content);
                             if (($report['Status'] ?? "") === "Fixed") {
                                 echo "selected";
                             }
-                            ?>
-                        >
+                            ?>>
                             Fixed
                         </option>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="description">
                         Description
                     </label>
@@ -235,11 +188,9 @@ $report = parseReport($content);
                         rows="5"
                         required
                     ><?php echo htmlspecialchars($report['Description'] ?? ""); ?></textarea>
-
                 </div>
 
                 <div class="form-group">
-
                     <label for="contact">
                         Contact Number
                     </label>
@@ -249,35 +200,24 @@ $report = parseReport($content);
                         name="contact"
                         id="contact"
                         value="<?php echo htmlspecialchars($report['Contact Number'] ?? ""); ?>"
-                        required
-                    >
+                        required>
 
                 </div>
-
                 <div class="button-group">
-
                     <button
                         type="submit"
-                        class="button button-primary"
-                    >
+                        class="button button-primary">
                         Save Changes
                     </button>
 
                     <a
                         href="reports.php"
-                        class="button button-secondary"
-                    >
+                        class="button button-secondary">
                         Cancel
                     </a>
-
                 </div>
-
             </form>
-
         </div>
-
     </main>
-
 </body>
-
 </html>
