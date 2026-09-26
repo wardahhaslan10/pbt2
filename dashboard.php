@@ -7,7 +7,6 @@ Matrik      : 18DDT23F1099
 */
 
 require_once "functions.php";
-
 requireLogin();
 $username = $_SESSION['username'];
 $category = $_SESSION['user_category'];
