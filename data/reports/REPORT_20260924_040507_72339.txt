@@ -1,0 +1,12 @@
+Report ID: REPORT_20260924_040507_72339
+Student Username: student
+Student Name: wardah
+Matric No: 1099
+Hostel Block: Block A
+Room Number: 31
+Type of Damage: Fan
+Urgency Level: High
+Date of Incident: 2026-01-29
+Description: repair
+Contact Number: 0195944542
+Status: Pending
